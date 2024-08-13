@@ -265,8 +265,8 @@ color: #2e2f42;
     
         
 }
-.our-team-border-link:hover,
-.our-team-border-link:focus {
+.our-team-border-item:hover,
+.our-team-border-item:focus {
     background-color: #404bbf;
 }
 .our-team-border-link {
@@ -395,6 +395,9 @@ margin-bottom: 16px;
 .footer-border .our-team-border-link:hover,
 .footer-border .our-team-border-link:focus {
 background-color: #31d0aa;
+}
+.footer-border {
+    gap: 16px;
 }
 .footer-logo-wrapper {
     margin-right: 120px;
