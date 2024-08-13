@@ -37,6 +37,7 @@ img {
 }
 .page-header {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header-container {
     display: flex;
@@ -75,11 +76,28 @@ color: #2e2f42;
         color: #2e2f42;
         display: block;
         padding: 24px 0;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link.current {
+    position: relative;
+    
+}
+.nav-link.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404bbf;
+    
 }
 .nav-link:hover,
 .nav-link:focus,
 .address-link:hover,
-.address-link:focus {
+.address-link:focus,
+.nav-link.current {
     color: #404bbf;
 }
 .address {
@@ -98,10 +116,21 @@ color: #2e2f42;
         color: #434455;
         padding: 24px 0;
         display: block;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero {
     background-color: #2e2f42;
     padding: 188px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7), 
+        rgba(46, 47, 66, 0.7)
+        ), 
+    url(../images/people-office.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+        max-width: 1440px;
+        margin: 0 auto;
     
 }
 
@@ -146,6 +175,17 @@ color: #2e2f42;
 }
 .features-item {
     width: calc((100% - 72px) / 4);
+}
+.features-item-border {
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+        border-radius: 4px;
+        width: 264px;
+        height: 112px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
 .features-subtitle {
         font-weight: 500;
@@ -203,6 +243,41 @@ color: #2e2f42;
         letter-spacing: 0.02em;   
         text-align: center;
 }
+.our-team-border {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 8px;
+    
+}
+.our-team-border-item {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+        border-radius: 50%;
+        
+}
+.our-team-border-item:hover,
+.our-team-border-item:focus {
+    background-color: #404bbf;
+}
+.our-team-border-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+.our-team-icon {
+    fill: #f4f4fd;
+    align-items: center;
+        justify-content: center;
+}
 .our-portfolio {
     padding: 120px 0;
 }
@@ -243,6 +318,33 @@ border-bottom: 1px solid #e7e9fc;
         line-height: 1.5;
         letter-spacing: 0.02em;
 }
+.thumb {
+    position: relative;
+    overflow: hidden;
+}
+.thumb-text {
+position: absolute;
+background-color: #4d5ae5;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    padding: 40px 32px 164px 32px;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+transform: translatey(100%);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.our-portfolio-item:hover {
+box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    background: #fff;
+}
+.our-portfolio-item:hover .thumb-text,
+.our-portfolio-item:focus .thumb-text {
+    transform: translatey(0);
+    
+}
 .page-footer {
     background-color: #2e2f42;
     padding: 100px 0;
@@ -261,4 +363,26 @@ border-bottom: 1px solid #e7e9fc;
         letter-spacing: 0.02em;
         color: #f4f4fd;
         max-width: 264px;
+}
+.footer-container {
+display: flex;
+gap: 120px;
+align-items: baseline;
+margin: auto;
+}
+
+.social-media-text {
+    font-weight: 500;
+line-height: 1.5;
+letter-spacing: 0.02em;
+color: #fff;
+margin-bottom: 16px;
+}
+
+.footer-border .our-team-border-item {
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-border .our-team-border-item:hover,
+.footer-border .our-team-border-item:focus {
+background-color: #31d0aa;
 }
